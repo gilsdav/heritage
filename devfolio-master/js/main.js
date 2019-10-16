@@ -15,7 +15,16 @@
       $('#preloader').delay(100).fadeOut('slow', function () {
         $(this).remove();
       });
-    }
+	}
+	
+
+	$('#open-menu').click(function(){
+		initPDFViewer("/assets/menu.pdf", 1);
+		$('#overlay').click(function(){
+			closePDFViewer();
+		});
+	});
+	
   });
 
   // Back to top button
@@ -115,3 +124,26 @@
 	});
 
 })(jQuery);
+
+function initPDFViewer(file, version) {
+	var overlay = document.createElement('div');
+	overlay.id = 'overlay';
+	overlay.className = 'opened';
+
+	var viewer = document.createElement('iframe');
+	viewer.src = 'lib/pdf/web/viewer.html?file=' + file + encodeURIComponent('?v=' + version);
+	overlay.appendChild(viewer);
+
+	var data = document.createElement('div');
+	data.className = 'lb-data';
+	data.innerHTML = '<div class="lb-closeContainer"><a class="lb-close"></a></div>';
+	overlay.appendChild(data);
+
+	// <div class="lb-data"><div class="lb-closeContainer"><a class="lb-close"></a></div></div>
+
+	document.body.appendChild(overlay);
+}
+
+function closePDFViewer() {
+	document.getElementById('overlay').remove();
+}

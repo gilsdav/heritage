@@ -39,7 +39,7 @@ a {
 }
 
 a:hover {
-  color: #0078ff;
+  color: #B7954F;
   text-decoration: none;
   transition: all 0.5s ease-in-out;
 }
@@ -620,7 +620,7 @@ a:hover {
   position: relative;
   color: #fff;
   background-size: 600px;
-  background-color: black;
+  background-color: #050505;
   background-position-y: initial;
   background-position-x: center;
 }
@@ -730,11 +730,19 @@ a:hover {
   margin-bottom: 3rem;
 }
 
+.service-box.clickable {
+  cursor: pointer;
+}
+
 .service-box:hover .ico-circle {
   transition: all 500ms ease;
   color: #fff;
-  background-color: #0078ff;
-  box-shadow: 0 0 0 10px #cde1f8;
+  background-color: #a08243;
+  box-shadow: 0 0 0 10px #f1e7d1;
+}
+
+.service-box .ico-circle i:before {
+  margin-top: 1rem;
 }
 
 .service-box .service-ico {
@@ -744,7 +752,7 @@ a:hover {
 
 .service-box .ico-circle {
   transition: all 500ms ease;
-  font-size: 4rem;
+  font-size: 4.3rem;
 }
 
 .service-box .s-title {
@@ -802,6 +810,7 @@ a:hover {
 .work-img {
   display: block;
   overflow: hidden;
+  max-height: 28rem;
 }
 
 .work-img img {
@@ -1281,4 +1290,33 @@ footer .credits a {
   .back-to-top {
     bottom: 15px;
   }
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 1031; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay.opened {
+  display: block;
+}
+
+#overlay iframe {
+  height: calc(100% - 5rem);
+  margin-top: 1.5rem;
+  border: none;
+}
+
+#overlay iframe, #overlay .lb-data {
+  width: 90vw;
+  margin-left: 5vw;
 }
