@@ -19,7 +19,7 @@
 	
 
 	$('#open-menu').click(function(){
-		initPDFViewer("/assets/menu.pdf?v=1", 1);
+		initPDFViewer("/assets/menu.pdf", 2);
 		$('#overlay').click(function(){
 			closePDFViewer();
 		});
@@ -131,6 +131,7 @@ function initPDFViewer(file, version) {
 	overlay.className = 'opened';
 
 	var viewer = document.createElement('iframe');
+	console.log('version', version);
 	viewer.src = 'lib/pdf/web/viewer.html?file=' + file + encodeURIComponent('?v=' + version);
 	overlay.appendChild(viewer);
 
