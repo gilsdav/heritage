@@ -19,7 +19,7 @@
 	
 
 	$('#open-menu').click(function(){
-		initPDFViewer("/assets/menu.pdf", 11);
+		initPDFViewer("/assets/menu.pdf", 12);
 		$('#overlay').click(function(){
 			closePDFViewer();
 		});
