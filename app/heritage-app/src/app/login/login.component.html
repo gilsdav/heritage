@@ -1,0 +1,14 @@
+<div>
+  Auth!
+  <!-- {{ (user | async) | json }} -->
+
+  <form [formGroup]="form">
+    <input type="text" placeholder="Email" formControlName="email" />
+    <input type="password" placeholder="Password" formControlName="password" />
+  </form>
+
+  <code>{{ (user | async)?.uid }}</code>
+  <button (click)="login()" *ngIf="showLoginButton">Log in</button>
+  <button (click)="signup()" >Sign in</button>
+  <button (click)="logout()" *ngIf="showLogoutButton">Log out</button>
+</div>
