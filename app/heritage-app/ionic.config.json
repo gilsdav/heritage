@@ -1,7 +1,0 @@
-{
-  "name": "heritage-app",
-  "integrations": {
-    "capacitor": {}
-  },
-  "type": "angular"
-}
